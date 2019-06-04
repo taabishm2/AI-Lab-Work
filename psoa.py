@@ -113,6 +113,7 @@ for iteration_i in range(iterations): # for each iteration
 
     # print the current best location to the console
     print('solution at x='+'%.2f' % global_best_location[0]+', y='+'%.2f' % global_best_location[1])
+    plt.scatter(iteration_i,Function(global_best_location[0],global_best_location[1]))
 
     # update the lists
     best_value.append(global_best_value.copy())
@@ -124,20 +125,20 @@ for iteration_i in range(iterations): # for each iteration
     iteration_locaion_best.append(particle_location[np.argmin(v),:])
 
 #%% Plot the final results
-plt.figure(figsize=(5,5))
-plt.grid('on')
-plt.rc('axes', axisbelow=True)
-plt.scatter(10,20,100,marker='*',facecolors='k', edgecolors='k')
-#plt.text(10,21,'optimal solution',horizontalalignment='center')
-for i in range(len(iteration_locaion)):
-    plt.scatter(iteration_locaion[i][:,0],iteration_locaion[i][:,1],10,marker='x')
-    plt.scatter(best_locaion[i][0],best_locaion[i][1],50,marker='o',facecolors='none',edgecolors='k',linewidths=0.4)
-    plt.text(best_locaion[i][0]+0.1,best_locaion[i][1]+0.1,str(i),fontsize=8)
-plt.xlim(-1,15)
-plt.ylim(-1,23)
-plt.xlabel('$x$')
-plt.ylabel('$y$')
-plt.title('2-dimensional particle swarm optimization')
+##plt.figure(figsize=(5,5))
+##plt.grid('on')
+##plt.rc('axes', axisbelow=True)
+##plt.scatter(10,20,100,marker='*',facecolors='k', edgecolors='k')
+###plt.text(10,21,'optimal solution',horizontalalignment='center')
+##for i in range(len(iteration_locaion)):
+##    plt.scatter(iteration_locaion[i][:,0],iteration_locaion[i][:,1],10,marker='x')
+##    plt.scatter(best_locaion[i][0],best_locaion[i][1],50,marker='o',facecolors='none',edgecolors='k',linewidths=0.4)
+##    plt.text(best_locaion[i][0]+0.1,best_locaion[i][1]+0.1,str(i),fontsize=8)
+##plt.xlim(-1,15)
+##plt.ylim(-1,23)
+##plt.xlabel('$x$')
+##plt.ylabel('$y$')
+##plt.title('2-dimensional particle swarm optimization')
 plt.show()
 
 
